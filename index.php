@@ -1,66 +1,33 @@
 <?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * For example, it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
-
-get_header(); ?>
-
-	<div id="primary" class="site-content">
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width" />
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<div id="page" class="hfeed site">
+	<div id="main" class="wrapper row">
 		<div id="content" role="main">
-		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
-
-			<?php twentytwelve_content_nav( 'nav-below' ); ?>
-
-		<?php else : ?>
-
-			<article id="post-0" class="post no-results not-found">
-
-			<?php if ( current_user_can( 'edit_posts' ) ) :
-				// Show a different message to a logged-in user who can add posts.
-			?>
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'No posts to display', 'twentytwelve' ); ?></h1>
-				</header>
-
-				<div class="entry-content">
-					<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'twentytwelve' ), admin_url( 'post-new.php' ) ); ?></p>
-				</div><!-- .entry-content -->
-
-			<?php else :
-				// Show the default message to everyone else.
-			?>
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'twentytwelve' ); ?></h1>
-				</header>
-
-				<div class="entry-content">
-					<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'twentytwelve' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			<?php endif; // end current_user_can() check ?>
-
-			</article><!-- #post-0 -->
-
-		<?php endif; // end have_posts() check ?>
-
+			<article>
+			<?php if ( have_posts() ) : ?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php the_content(); ?>
+					<img src="http://www.megane.net/wp-content/uploads/2014/03/4629510dfd2e6cebdfc6b516cf6211a8.png" alt="スクリーンショット 2014-03-15 6.48.38" width="1900" height="1064" class="alignnone size-full wp-image-99700291">
+					<h1>手を叩く</h1>
+					<h2 class="red m300">STEP FORWARD</h2>
+					<h2 class="black m100">STEP FORWARD</h2>
+				<?php endwhile; ?>
+				<?php endif; // end have_posts() check ?>
+			</article>
 		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+	</div><!-- #main .wrapper -->
+</div><!-- #page -->
+<?php wp_footer(); ?>
+</body>
+</html>
