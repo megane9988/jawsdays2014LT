@@ -18,7 +18,7 @@
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php the_content(); ?>
-					<img src="http://www.megane.net/wp-content/uploads/2014/03/4629510dfd2e6cebdfc6b516cf6211a8.png" alt="スクリーンショット 2014-03-15 6.48.38" width="1900" height="1064" class="alignnone size-full wp-image-99700291">
+					<img src="http://jawsdays.m-g-n.me.s3-website-ap-northeast-1.amazonaws.com/wp-content/uploads/2014/03/4629510dfd2e6cebdfc6b516cf6211a8.png" alt="スクリーンショット 2014-03-15 6.48.38" width="1900" height="1064" class="alignnone size-full wp-image-99700291">
 					<h1>手を叩く</h1>
 					<h2 class="red m300">STEP FORWARD</h2>
 					<h2 class="black m100">STEP FORWARD</h2>
